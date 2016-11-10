@@ -93,6 +93,37 @@ function draw()
 	//current = current.checaVizinhos();
 }
 
+function keyPressed()
+{
+	i = current.i;
+	j = current.j;
+	
+	if (keyCode == DOWN_ARROW)
+	{
+		console.log(grid[i][j+1].walls);
+		if(grid[i][j+1].walls[0]==false)
+			current.j++;
+	}
+	if (keyCode == UP_ARROW)
+	{
+		console.log(grid[i][j-1].walls);
+		if(grid[i][j-1].walls[2]==false)
+			current.j--;
+	}
+	if (keyCode == RIGHT_ARROW)
+	{
+		console.log(grid[i+1][j].walls);
+		if(grid[i+1][j].walls[3]==false)
+			current.i++;
+	}
+	if (keyCode == LEFT_ARROW)
+	{
+		console.log(grid[i-1][j].walls);
+		if(grid[i-1][j].walls[1]==false)
+			current.i--;
+	}	
+}
+
 function Cell(i, j)
 {
 	this.i = i;
